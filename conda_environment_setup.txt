@@ -1,0 +1,16 @@
+#Create a new long-read-rna environment
+#Tried sharing yml files, but encounted problems across platforms. Repeating these steps should work.
+conda create -n long-read-rna
+
+#source it to start using it
+source activate long-read-rna
+
+#Add the required channels
+conda config --append channels anaconda 
+conda config --append channels bioconda 
+conda config --append channels conda-forge 
+conda config --append channels agbiome 
+
+#Add the required packages
+conda install -y minimap2 bedtools samtools htsbox java-jdk genometools-genometools bbtools perl ucsc-gff3togenepred ucsc-genepredtobed
+
